@@ -1,7 +1,7 @@
 import pandas as pd
-import rumpy as np
+import numpy as np
 import matplotlib.pyplot as plt
-data = pd.read_csv('tips.csv')
+data = pd.read_csv("tips.csv")
 data.head(10)
 
 plt.scatter(data['year'],data['own'])
