@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("tips.csv")
 data.head(10)
 
-plt.scatter(data['year'],data['own'])
+plt.scatter(data['day'],data['tips'])
 plt.title('scatter plot')
-plt.xlabel('year')
-plt.ylabel('own')
+plt.xlabel('data')
+plt.ylabel('tips')
 plt.show()
 
 plt.plot(data['year'])
