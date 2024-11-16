@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-data = pd.read_csv('Book2.csv')  # This will skip problematic lines
+data = pd.read_csv('tip.csv')  # This will skip problematic lines
 print(data.head())
 
 plt.scatter(data['day'],data['tip'])
