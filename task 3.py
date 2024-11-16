@@ -29,5 +29,5 @@ fig.update_layout(
     showlegend=False,  
     height=800,        
     width=1000,        
-
+)
 fig.show()
