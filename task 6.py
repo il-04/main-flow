@@ -92,4 +92,46 @@ plt.xticks(rotation=45)
 plt.savefig('5.png') 
 plt.clf() 
 
+studio_profitability = df.groupby('LeadStudio')['Profitability'].mean().sort_values(ascending=False)
+print("\nAverage Profitability by Studio (LeadStudio):")
+print(studio_profitability)
+
+plt.figure(figsize=(10, 6))
+studio_profitability.plot(kind='bar', color='lightcoral')
+plt.title('Average Profitability by Studio')
+plt.xlabel('Lead Studio')
+plt.ylabel('Average Profitability')
+plt.xticks(rotation=45)
+plt.savefig('6.png')
+plt.clf()
+
+print("\nSummary of Theaters Opened in Opening Week:")
+print(df['TheatersOpenWeek'].describe())
+
+plt.figure(figsize=(10, 6))
+sns.histplot(df['TheatersOpenWeek'], bins=30, kde=True, color='cyan')
+plt.title('Distribution of Theaters Opened in Opening Week')
+plt.xlabel('Number of Theaters')
+plt.ylabel('Number of Movies')
+plt.savefig('7.png')
+plt.clf()
+
+print("\nSummary of Profitability and Audience Score:")
+print(df[['Profitability', 'AudienceScore']].describe())
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x=df['AudienceScore'], y=df['Profitability'], color='brown')
+plt.title('Profitability vs Audience Score')
+plt.xlabel('Audience Score')
+plt.ylabel('Profitability')
+plt.savefig('8.png')
+plt.clf()
+
+plt.figure(figsize=(10, 6))
+world_gross_by_genre.plot(kind='bar', color='limegreen')
+plt.title('Total World Gross by Genre')
+plt.xlabel('Genre')
+plt.savefig('9.png')
+plt.clf()
+
 
