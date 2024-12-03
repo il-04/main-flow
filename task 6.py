@@ -32,7 +32,7 @@ print("7. What is the distribution of the number of theaters movies opened in du
 print("8. What is the relationship between profitability and audience score?")
 print("9. What is the total world gross by genre?")
 print("10. What is the trend of profitability over the years?")
-print("11. What is the relationship between budget and world gross earnings?")
+
 
 
 avg_profitability = df.groupby('Genre')['Profitability'].mean().sort_values(ascending=False)
