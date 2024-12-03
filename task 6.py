@@ -31,9 +31,7 @@ print("6. Which studio (LeadStudio) has the highest average profitability?")
 print("7. What is the distribution of the number of theaters movies opened in during the opening week?")
 print("8. What is the relationship between profitability and audience score?")
 print("9. What is the total world gross by genre?")
-print("10. What is the trend of profitability over the years?")
-
-
+print("10. What is the distribution of movie genres in the dataset?")
 
 avg_profitability = df.groupby('Genre')['Profitability'].mean().sort_values(ascending=False)
 print("\nAverage Profitability by Genre:")
@@ -136,5 +134,15 @@ plt.title('Total World Gross by Genre')
 plt.xlabel('Genre')
 plt.savefig('9.png')
 plt.clf()
+
+print(df['Genre'].value_counts())
+genre_counts = df['Genre'].value_counts()
+
+plt.figure(figsize=(8, 8))
+plt.pie(genre_counts, labels=genre_counts.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette("Set3", len(genre_counts)))
+plt.title("Distribution of Movie Genres")
+plt.axis('equal')  
+plt.savefig('10.png') 
+plt.clf() 
 
 
